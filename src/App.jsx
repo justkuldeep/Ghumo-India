@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import DiscoverIndia from "./components/DiscoverIndia";
 import Footer from "./components/Footer";
+import Chatbot from "./components/Chatbot";
 
 import Home from "./pages/Home";
 import StatePage from "./pages/StatePage";
@@ -28,6 +29,7 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
+      <Chatbot />
     </>
   );
 }
