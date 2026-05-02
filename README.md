@@ -1,3 +1,5 @@
+Live Project: https://ghumo-india-rho.vercel.app/
+
 # Ghumo India
 
 Ghumo India is a React + Vite travel discovery app focused on Indian states, destinations, experiences, food, and festivals. It uses client-side routing to move between the home page, destination pages, experiences, and the about section, with a content-rich visual layout built from local JSON and image assets.
