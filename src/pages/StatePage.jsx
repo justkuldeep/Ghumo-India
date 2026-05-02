@@ -31,7 +31,7 @@ const StateWorld = () => {
 
   useEffect(() => {
     if (state && state.music) {
-      const bgAudio = new Audio(`/${state.music}`);
+      const bgAudio = new Audio(state.music);
       bgAudio.loop = true;
       bgAudio.volume = 0.4;
       setAudio(bgAudio);
@@ -78,7 +78,7 @@ const StateWorld = () => {
             variants={zoomIn}
           >
             <img
-              src={`/${isImageOnly ? item : item.image}`}
+              src={isImageOnly ? item : item.image}
               alt={item.name || item.title || `Item ${i}`}
               className="w-full h-[360px] object-cover group-hover:brightness-75 transition duration-300"
             />
@@ -105,7 +105,7 @@ const StateWorld = () => {
       {/* Hero Section */}
       <div className="relative h-[110vh] w-full overflow-hidden">
         <img
-          src={`/${state.image}`}
+          src={state.image}
           alt={state.name}
           className="absolute inset-0 w-full h-full object-cover scale-110 brightness-[.3]"
         />
