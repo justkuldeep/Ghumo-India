@@ -1,71 +1,82 @@
+import gangaAarti from "../assets/experiences/ganga-aarti.jpg";
+import camelSafari from "../assets/experiences/camel-safari.jpg";
+import munnarTea from "../assets/experiences/munnar-tea.jpg";
+import alleppey from "../assets/experiences/alleppey.jpg";
+import kashmirTrek from "../assets/experiences/kashmir-trek.jpg";
+import rootBridge from "../assets/experiences/root-bridge.jpg";
+import streetFood from "../assets/experiences/street-food.jpg";
+import mysorePalace from "../assets/experiences/mysore-palace.jpg";
+import yogaRishikesh from "../assets/experiences/yoga-rishikesh.jpg";
+import udaipurLake from "../assets/experiences/udaipur-lake.jpg";
+
 const experiences = [
   {
     id: 1,
     title: "Ganga Aarti at Varanasi",
-    image: "/src/assets/experiences/ganga-aarti.jpg",
+    image: gangaAarti,
     description:
       "Feel the divine energy as chants echo across the ghats and diyas float on the sacred Ganga river under the twilight sky.",
   },
   {
     id: 2,
     title: "Camel Safari in the Thar Desert",
-    image: "/src/assets/experiences/camel-safari.jpg",
+    image: camelSafari,
     description:
       "Ride through golden dunes, watch the sunset paint the sand, and sleep under a million stars in Rajasthan's royal desert.",
   },
   {
     id: 3,
     title: "Tea Garden Walks in Munnar",
-    image: "/src/assets/experiences/munnar-tea.jpg",
+    image: munnarTea,
     description:
       "Breathe in the misty air as you stroll through rolling tea plantations in Kerala, where nature hums in perfect harmony.",
   },
   {
     id: 4,
     title: "Backwater Cruise in Alleppey",
-    image: "/src/assets/experiences/alleppey.jpg",
+    image: alleppey,
     description:
       "Glide through tranquil waters in a traditional houseboat, surrounded by palm trees, chirping birds, and lush serenity.",
   },
   {
     id: 5,
     title: "Snow Trek in Kashmir",
-    image: "/src/assets/experiences/kashmir-trek.jpg",
+    image: kashmirTrek,
     description:
       "Trek through pristine snowfields and pine forests while being embraced by the Himalayas' magical silence and grandeur.",
   },
   {
     id: 6,
     title: "Living Root Bridges of Meghalaya",
-    image: "/src/assets/experiences/root-bridge.jpg",
+    image: rootBridge,
     description:
       "Step into a fairytale world where bridges are grown, not built—crafted by nature and nurtured by tribal traditions.",
   },
   {
     id: 7,
     title: "Street Food Trail in Delhi",
-    image: "/src/assets/experiences/street-food.jpg",
+    image: streetFood,
     description:
       "From sizzling parathas to creamy kulfis, walk through narrow alleys where every bite tells a story of flavor and culture.",
   },
   {
     id: 8,
     title: "Royal Palace Tour in Mysore",
-    image: "/src/assets/experiences/mysore-palace.jpg",
+    image: mysorePalace,
     description:
       "Explore regal corridors, golden halls, and timeless tales in one of India’s grandest royal residences.",
   },
   {
     id: 9,
     title: "Yoga Sunrise in Rishikesh",
-    image: "/src/assets/experiences/yoga-rishikesh.jpg",
+    image: yogaRishikesh,
     description:
       "As the sun rises over the Ganges, align your mind, body, and soul with ancient yogic wisdom in the spiritual capital of the world.",
   },
   {
     id: 10,
     title: "Boat Ride in Udaipur's Lakes",
-    image: "/src/assets/experiences/udaipur-lake.jpg",
+    image: udaipurLake,
     description:
       "Sail through shimmering waters past palaces and temples as the sun dips behind Aravalli hills in this romantic city of lakes.",
   },

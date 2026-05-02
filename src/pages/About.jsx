@@ -2,6 +2,13 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import { FaMapMarkedAlt, FaUsers, FaLandmark, FaGlobeAsia } from "react-icons/fa";
+import aboutHeroImage from "../assets/images/heritage.jpg";
+import cultureImage from "../assets/images/culture.jpg";
+import foodImage from "../assets/images/food.jpg";
+import heritageImage from "../assets/images/heritage.jpg";
+import spiritualImage from "../assets/images/spiritual.jpg";
+import wildlifeImage from "../assets/images/wildlife.jpg";
+import natureImage from "../assets/images/nature.jpg";
 
 const About = () => {
   return (
@@ -11,7 +18,7 @@ const About = () => {
       {/* Hero Section */}
       <div
         className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
+        style={{ backgroundImage: `url(${aboutHeroImage})` }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center px-6 md:px-12">
@@ -48,12 +55,12 @@ const About = () => {
         <h3 className="text-3xl font-bold text-center text-orange-600 mb-10">Why Travel with Ghumo India?</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
           {[
-            { title: "Diverse Cultures", img: "src/assets/images/culture.jpg" },
-            { title: "Incredible Cuisines", img: "src/assets/images/food.jpg" },
-            { title: "Historic Monuments", img: "src/assets/images/heritage.jpg" },
-            { title: "Spiritual Retreats", img: "src/assets/images/spiritual.jpg" },
-            { title: "Untamed Wildlife", img: "src/assets/images/wildlife.jpg" },
-            { title: "Natural Wonders", img: "src/assets/images/nature.jpg" },
+            { title: "Diverse Cultures", img: cultureImage },
+            { title: "Incredible Cuisines", img: foodImage },
+            { title: "Historic Monuments", img: heritageImage },
+            { title: "Spiritual Retreats", img: spiritualImage },
+            { title: "Untamed Wildlife", img: wildlifeImage },
+            { title: "Natural Wonders", img: natureImage },
           ].map((item, index) => (
             <motion.div
               key={index}

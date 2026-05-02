@@ -1,7 +1,18 @@
+import tajmahal from "../assets/destinations/tajmahal.jpg";
+import kerala from "../assets/destinations/kerala.jpg";
+import desert from "../assets/destinations/desert.jpg";
+import ladakh from "../assets/destinations/ladakh.jpg";
+import varanasi from "../assets/destinations/varanasi.jpg";
+import meghalaya from "../assets/destinations/meghalaya.jpg";
+import goa from "../assets/destinations/goa.jpg";
+import kashmir from "../assets/destinations/kashmir.jpg";
+import karnataka from "../assets/destinations/karnataka.jpg";
+import sikkim from "../assets/destinations/sikkim.jpg";
+
 const destinations = [
   {
     id: 1,
-    image: "/src/assets/destinations/tajmahal.jpg",
+    image: tajmahal,
     name: "Taj Mahal",
     location: "Agra, Uttar Pradesh",
     description:
@@ -9,7 +20,7 @@ const destinations = [
   },
   {
     id: 2,
-    image: "/src/assets/destinations/kerala.jpg",
+    image: kerala,
     name: "Alleppey Backwaters",
     location: "Kerala",
     description:
@@ -17,7 +28,7 @@ const destinations = [
   },
   {
     id: 3,
-    image: "/src/assets/destinations/desert.jpg",
+    image: desert,
     name: "Thar Desert",
     location: "Jaisalmer, Rajasthan",
     description:
@@ -25,7 +36,7 @@ const destinations = [
   },
   {
     id: 4,
-    image: "/src/assets/destinations/ladakh.jpg",
+    image: ladakh,
     name: "Manali",
     location: "Himachal Pradesh",
     description:
@@ -33,7 +44,7 @@ const destinations = [
   },
   {
     id: 5,
-    image: "/src/assets/destinations/varanasi.jpg",
+    image: varanasi,
     name: "Varanasi Ghats",
     location: "Uttar Pradesh",
     description:
@@ -41,7 +52,7 @@ const destinations = [
   },
   {
     id: 6,
-    image: "/src/assets/destinations/meghalaya.jpg",
+    image: meghalaya,
     name: "Cherrapunji",
     location: "Meghalaya",
     description:
@@ -49,7 +60,7 @@ const destinations = [
   },
   {
     id: 7,
-    image: "/src/assets/destinations/goa.jpg",
+    image: goa,
     name: "Goa Beaches",
     location: "Goa",
     description:
@@ -57,7 +68,7 @@ const destinations = [
   },
   {
     id: 8,
-    image: "/src/assets/destinations/kashmir.jpg",
+    image: kashmir,
     name: "Kashmir Valley",
     location: "Jammu & Kashmir",
     description:
@@ -65,7 +76,7 @@ const destinations = [
   },
   {
     id: 9,
-    image: "/src/assets/destinations/karnataka.jpg",
+    image: karnataka,
     name: "Mysore Palace",
     location: "Karnataka",
     description:
@@ -73,7 +84,7 @@ const destinations = [
   },
   {
     id: 10,
-    image: "/src/assets/destinations/sikkim.jpg",
+    image: sikkim,
     name: "Nathula Pass",
     location: "Sikkim",
     description:
