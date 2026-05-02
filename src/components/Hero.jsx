@@ -11,13 +11,23 @@ import {
 
 const Hero = () => {
   const videoRef = useRef(null);
+  const audioRef = useRef(null);
   const [muted, setMuted] = useState(true);
   const [activeTab, setActiveTab] = useState("India 360");
 
   const toggleMute = () => {
     const video = videoRef.current;
+    const audio = audioRef.current;
     video.muted = !video.muted;
     setMuted(video.muted);
+    
+    // Control audio playback
+    if (!video.muted && audio) {
+      audio.play().catch(() => {});
+    } else if (video.muted && audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
   };
 
   useEffect(() => {
@@ -67,6 +77,9 @@ const Hero = () => {
         muted
         playsInline
       />
+
+      {/* Audio for unmuted state */}
+      <audio ref={audioRef} src="/assets/music/ordinary.mpeg" loop />
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 z-10" />
