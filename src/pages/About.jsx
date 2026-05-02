@@ -11,7 +11,7 @@ const About = () => {
       {/* Hero Section */}
       <div
         className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/assets/images/heritage.jpg')" }}
+        style={{ backgroundImage: "url('/assets/images/rajasthan.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center px-6 md:px-12">
@@ -48,12 +48,12 @@ const About = () => {
         <h3 className="text-3xl font-bold text-center text-orange-600 mb-10">Why Travel with Ghumo India?</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
           {[
-            { title: "Diverse Cultures", img: "/assets/images/culture.jpg" },
-            { title: "Incredible Cuisines", img: "/assets/images/food.jpg" },
-            { title: "Historic Monuments", img: "/assets/images/heritage.jpg" },
-            { title: "Spiritual Retreats", img: "/assets/images/spiritual.jpg" },
-            { title: "Untamed Wildlife", img: "/assets/images/wildlife.jpg" },
-            { title: "Natural Wonders", img: "/assets/images/nature.jpg" },
+            { title: "Diverse Cultures", img: "/assets/images/tamil-nadu.jpg" },
+            { title: "Incredible Cuisines", img: "/assets/images/kerala.jpg" },
+            { title: "Historic Monuments", img: "/assets/images/maharashtra.jpg" },
+            { title: "Spiritual Retreats", img: "/assets/images/uttarakhand.jpg" },
+            { title: "Untamed Wildlife", img: "/assets/images/assam.jpg" },
+            { title: "Natural Wonders", img: "/assets/images/meghalaya.jpg" },
           ].map((item, index) => (
             <motion.div
               key={index}
