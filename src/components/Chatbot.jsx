@@ -66,7 +66,12 @@ const getAssistantReply = (payload) => {
 const toBulletPointsIfNeeded = (text) => {
   if (!text || typeof text !== "string") return text;
 
-  const normalized = text.replace(/\\n/g, "\n").trim();
+  const normalized = text
+    .replace(/\\n/g, "\n")
+    .replace(/\r\n/g, "\n")
+    .replace(/\s+\*\s+(?=[A-Z0-9])/g, "\n- ")
+    .replace(/\n\s*\*\s+/g, "\n- ")
+    .trim();
   const hasListSyntax = /(^|\n)\s*([*-]|\d+\.)\s+/.test(normalized);
 
   if (hasListSyntax) return normalized;
@@ -82,11 +87,14 @@ const toBulletPointsIfNeeded = (text) => {
 };
 
 const renderBoldText = (line) => {
-  const parts = line.split(/(\*\*[^*]+\*\*)/g);
+  const parts = line.split(/(\*\*[^*]+\*\*|\*[^*\n]+\*)/g);
 
   return parts.map((part, idx) => {
     if (/^\*\*[^*]+\*\*$/.test(part)) {
       return <strong key={idx}>{part.slice(2, -2)}</strong>;
+    }
+    if (/^\*[^*\n]+\*$/.test(part)) {
+      return <strong key={idx}>{part.slice(1, -1)}</strong>;
     }
     return <span key={idx}>{part}</span>;
   });
