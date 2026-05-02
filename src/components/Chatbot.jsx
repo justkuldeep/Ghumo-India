@@ -63,6 +63,66 @@ const getAssistantReply = (payload) => {
   return "I received a response but could not parse it.";
 };
 
+const toBulletPointsIfNeeded = (text) => {
+  if (!text || typeof text !== "string") return text;
+
+  const normalized = text.replace(/\\n/g, "\n").trim();
+  const hasListSyntax = /(^|\n)\s*([*-]|\d+\.)\s+/.test(normalized);
+
+  if (hasListSyntax) return normalized;
+
+  const sentences = normalized
+    .split(/(?<=[.!?])\s+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+
+  if (sentences.length < 2) return normalized;
+
+  return sentences.map((sentence) => `- ${sentence}`).join("\n");
+};
+
+const renderBoldText = (line) => {
+  const parts = line.split(/(\*\*[^*]+\*\*)/g);
+
+  return parts.map((part, idx) => {
+    if (/^\*\*[^*]+\*\*$/.test(part)) {
+      return <strong key={idx}>{part.slice(2, -2)}</strong>;
+    }
+    return <span key={idx}>{part}</span>;
+  });
+};
+
+const renderAssistantContent = (text) => {
+  const normalized = toBulletPointsIfNeeded(text || "");
+  const lines = normalized
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (!lines.length) return null;
+
+  const isBulleted = lines.every((line) => /^([*-]|\d+\.)\s+/.test(line));
+
+  if (isBulleted) {
+    return (
+      <ul className="list-disc pl-5 space-y-1">
+        {lines.map((line, idx) => {
+          const cleanLine = line.replace(/^([*-]|\d+\.)\s+/, "");
+          return <li key={idx}>{renderBoldText(cleanLine)}</li>;
+        })}
+      </ul>
+    );
+  }
+
+  return (
+    <div className="space-y-1">
+      {lines.map((line, idx) => (
+        <p key={idx}>{renderBoldText(line)}</p>
+      ))}
+    </div>
+  );
+};
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -127,7 +187,9 @@ const Chatbot = () => {
         ...prev,
         {
           role: "assistant",
-          text: assistantText || "I received an empty response.",
+          text: toBulletPointsIfNeeded(
+            assistantText || "I received an empty response."
+          ),
         },
       ]);
     } catch (_error) {
@@ -174,7 +236,9 @@ const Chatbot = () => {
                       : "bg-white text-gray-800 border border-gray-200 rounded-bl-md"
                   }`}
                 >
-                  {msg.text}
+                  {msg.role === "assistant"
+                    ? renderAssistantContent(msg.text)
+                    : msg.text}
                 </div>
               </div>
             ))}
