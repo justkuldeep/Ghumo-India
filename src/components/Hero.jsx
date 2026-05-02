@@ -8,7 +8,6 @@ import {
   MdAccountBalance,
   MdSelfImprovement,
 } from "react-icons/md";
-import ladakhVideo from "../assets/images/hero.mp4";
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -61,7 +60,7 @@ const Hero = () => {
       {/* Background Video */}
       <video
         ref={videoRef}
-        src={ladakhVideo}
+        src="/assets/images/hero.mp4"
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         loop
